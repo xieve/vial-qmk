@@ -49,3 +49,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,          KC_TRNS,                            KC_TRNS,                                     KC_TRNS,          KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,           KC_TRNS
 	)
 };
+
+void keyboard_pre_init_user() {
+    gpio_set_pin_output(D5);
+}
+
+// Use ScrLck indicator as layer indicator
+layer_state_t layer_state_set_user(layer_state_t state) {
+    gpio_write_pin(D5, IS_LAYER_OFF_STATE(state, 1));
+    return state;
+}

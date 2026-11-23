@@ -16,8 +16,7 @@
     },
     "indicators": {
         "caps_lock": "D6",
-        "num_lock": "D5",
-        "scroll_lock": "D7",
+        "num_lock": "D7",
         "on_state": 0
     },
     "matrix_pins": {
